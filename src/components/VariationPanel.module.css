@@ -1,0 +1,83 @@
+.panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-surface);
+  border-top: 1.5px solid var(--border-purple);
+  z-index: 60;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -12px 50px rgba(0, 0, 0, 0.5);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.panel.open { transform: translateY(0); }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  background: var(--bg-surface);
+  z-index: 1;
+}
+.title { font-size: 15px; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+.headerRight { display: flex; align-items: center; gap: 12px; }
+
+.applyAllAi {
+  padding: 6px 16px;
+  background: linear-gradient(135deg, var(--purple-core), var(--accent-pink));
+  border: none; border-radius: var(--radius-full); color: white;
+  font-size: 12px; font-weight: 700; cursor: pointer; transition: opacity 0.2s; letter-spacing: 0.3px;
+}
+.applyAllAi:hover { opacity: 0.85; }
+
+.closeBtn { background: none; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; line-height: 1; transition: color 0.2s; padding: 0 2px; }
+.closeBtn:hover { color: var(--text-primary); }
+
+.body { display: flex; gap: 32px; padding: 20px 28px 24px; flex-wrap: wrap; }
+.noOpts { padding: 20px 28px; color: var(--text-muted); font-size: 13px; }
+
+.optGroup { display: flex; flex-direction: column; gap: 10px; min-width: 160px; }
+.optHeader { display: flex; align-items: center; gap: 10px; }
+.optLabel { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); }
+
+.aiApplyBtn {
+  padding: 2px 10px; background: none; border: 1px solid var(--border-purple);
+  border-radius: var(--radius-full); color: var(--purple-glow); font-size: 10px; font-weight: 600; cursor: pointer; transition: all 0.18s;
+}
+.aiApplyBtn:hover { background: var(--purple-mist); border-color: var(--purple-bright); }
+
+.colorGrid { display: flex; flex-wrap: wrap; gap: 8px; }
+.colorSwatch {
+  width: 32px; height: 32px; border-radius: 50%; border: 2.5px solid transparent;
+  cursor: pointer; position: relative; transition: all 0.18s; flex-shrink: 0; outline: none;
+}
+.colorSwatch:hover { transform: scale(1.12); }
+.colorSwatch.swatchSelected { border-color: white; box-shadow: 0 0 0 2.5px var(--purple-bright); }
+.colorSwatch.swatchAi { box-shadow: 0 0 0 2px var(--accent-pink); }
+.colorSwatch.swatchSelected.swatchAi { border-color: white; box-shadow: 0 0 0 2.5px var(--accent-pink); }
+
+.noneX {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: var(--text-muted); border: 1.5px solid var(--border-subtle); border-radius: 50%;
+}
+.aiDot {
+  position: absolute; top: -2px; right: -2px; width: 8px; height: 8px;
+  border-radius: 50%; background: var(--accent-pink); border: 1.5px solid var(--bg-surface);
+}
+.aiHint { font-size: 11px; color: var(--text-muted); font-style: italic; }
+.aiHint strong { color: var(--purple-pale); font-style: normal; }
+
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tab {
+  padding: 5px 12px; border-radius: var(--radius-full); background: var(--bg-elevated);
+  border: 1.5px solid var(--border-subtle); color: var(--text-secondary);
+  font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.18s; white-space: nowrap;
+}
+.tab:hover { border-color: var(--border-purple); color: var(--text-primary); }
+.tab.tabActive { background: var(--purple-mist); border-color: var(--purple-bright); color: var(--purple-pale); font-weight: 700; }

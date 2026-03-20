@@ -1,0 +1,106 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  gap: 16px;
+  animation: fadeInUp 0.4s ease;
+  padding: 40px;
+}
+
+.orb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--purple-bright), var(--purple-deep));
+  box-shadow: 0 0 40px rgba(92,63,216,0.5), inset 0 0 20px rgba(255,255,255,0.1);
+  animation: orb-pulse 1.8s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: rgba(255,255,255,0.9);
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.progressWrap {
+  width: 260px;
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--purple-core), var(--accent-pink));
+  transition: width 0.5s ease;
+}
+
+.progressPct {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--purple-pale);
+  margin-top: -8px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 22px;
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 260px;
+  transition: all 0.4s;
+}
+
+.step.done {
+  border-color: var(--border-purple);
+  color: var(--purple-pale);
+  background: var(--purple-mist);
+}
+
+.step.active {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  background: rgba(0, 229, 204, 0.07);
+}
+
+.stepIcon {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.step.active .stepIcon {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}

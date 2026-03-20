@@ -1,0 +1,180 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 7, 9, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-purple);
+  border-radius: var(--radius-xl);
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(123, 95, 245, 0.1);
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.headerIcon { font-size: 18px; }
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s;
+  padding: 0 2px;
+}
+.closeBtn:hover { color: var(--text-primary); }
+
+/* ── Canvas ── */
+.canvas {
+  padding: 32px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+.mockCard {
+  width: 200px;
+  border-radius: 14px;
+  border: 1.5px solid;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mockImageArea {
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid;
+}
+
+.mockEmoji { font-size: 48px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+
+.mockBody { padding: 12px 14px; }
+
+.mockTitle {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 4px;
+}
+
+.mockSub {
+  font-size: 10px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.mockKeywords {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.canvasLabel {
+  font-size: 11px;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
+}
+
+/* ── Traits ── */
+.traitsSection {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.traitsTitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trait {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--purple-mist);
+  border: 1px solid var(--border-purple);
+  color: var(--purple-pale);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footerDesc {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.selectBtn {
+  padding: 8px 20px;
+  background: var(--purple-core);
+  border: none;
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.selectBtn:hover { background: var(--purple-bright); }
